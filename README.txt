@@ -1,0 +1,1 @@
+Singleton pattern, using lazy and eager loading.
