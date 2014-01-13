@@ -9,22 +9,29 @@ namespace SingletonPattern
 {
     public class Singleton
     {
+        /* Design a class with a private constructor */
         private Singleton() {}
 
         /*Create the one instance here*/                 /*Eager initialization*/
-        private static /*readonly*/ Singleton instance = new Singleton();
+        //private static /*readonly*/ Singleton instance = new Singleton();
+        /*Provide access to the one instance with a GET method*/
+        //public static Singleton getSingleton() { return instance; }
 
         /*Lazy initialization 4byte reference*/
-        //private static Singleton instance;
-        //public static Singleton getSingletonLazy()
-        //{
-        //    if (instance == null)
-        //        instance = new Singleton();
-        //    return instance;
-        //}
+        private static Singleton instance;
+        public static Singleton getSingletonLazy()
+        {
+            
+            return instance ?? (instance = new Singleton());
+            //return instance = (instance != null) ? instance : new Singleton();
 
-        /*Provide access to the one instance with a GET method*/
-        public static Singleton getSingleton() { return instance; }
+            //if (instance == null)
+            //    instance = new Singleton();
+            //return instance;
+            
+            //NO!!!! get { return instance ?? (instance = new Singleton()); }
+        }
+
 
         private StreamWriter outStream;
         private int logNumber = 0;

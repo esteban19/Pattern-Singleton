@@ -16,11 +16,11 @@ namespace SingletonPattern
             //Singleton logger = new Singleton();
 
             //Singleton class name.getSingleton().members/methods();
-            Singleton.getSingleton().InitializeLogging();
-            Singleton.getSingleton().LogMessage("I love static data");
-            Singleton.getSingleton().LogMessage("static data exists before and after main()");
-            Singleton.getSingleton().LogMessage("When I think static, I think memory created by the compiler");
-            Singleton.getSingleton().ShutdownLogging();
+            Singleton.getSingletonLazy().InitializeLogging();
+            Singleton.getSingletonLazy().LogMessage("I love static data");
+            Singleton.getSingletonLazy().LogMessage("static data exists before and after main()");
+            Singleton.getSingletonLazy().LogMessage("When I think static, I think memory created by the compiler");
+            Singleton.getSingletonLazy().ShutdownLogging();
 
             //Logger.InitializeLogging();
             //Logger.LogMessage("I love static data");
